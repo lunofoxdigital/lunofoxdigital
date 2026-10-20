@@ -1,4 +1,4 @@
-## Hello, I am trying to start a brewery and I do all the digital stuff, help is always welcome. 
+## Hello, I do all the digital stuff for my 'brewery with no beer' AKFoxy7 and Fox Recovery UK, a Sports Massage therapist, help is always welcome. 
 
 <!--
 **lunofoxdigital/lunofoxdigital** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
