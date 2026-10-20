@@ -37,7 +37,7 @@
             overflow-x: hidden;
         }
 
-        /* Pure Pitch-Black Background */
+        /* Pure pitch-black background on logo */
         .ambient-bg {
             position: fixed;
             top: 0;
@@ -61,24 +61,7 @@
             padding: 2rem 1.25rem;
         }
 
-        .card {
-            width: 100%;
-            max-width: 540px;
-            background: var(--glass-bg);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
-            border: 1px solid var(--glass-border);
-            border-radius: 28px;
-            padding: 3rem 2.25rem;
-            box-shadow: var(--shadow);
-            text-align: center;
-            animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        
 
         .logo-badge {
             width: 80px;
