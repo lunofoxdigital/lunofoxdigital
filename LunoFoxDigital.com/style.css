@@ -29,7 +29,7 @@ html, body {
     overflow-x: hidden;
 }
 
-/* Pure pitch-black background on logo */
+/* Pure pitch-black background */
 .ambient-bg {
     position: fixed;
     top: 0;
@@ -51,8 +51,21 @@ html, body {
     align-items: center;
     min-height: 100vh;
     padding: 2rem 1.25rem;
+    width: 100%;
 }
 
+/* Main Card Container Centered */
+.card {
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Centered Logo Badge */
 .logo-badge {
     width: 80px;
     height: 80px;
@@ -69,6 +82,7 @@ html, body {
     flex-shrink: 0;
 }
 
+/* Centered Title & Subtitle */
 h1 {
     font-size: clamp(2rem, 5vw, 2.5rem);
     font-weight: 700;
@@ -76,6 +90,7 @@ h1 {
     letter-spacing: -0.02em;
     color: var(--text-primary);
     margin-bottom: 0.75rem;
+    width: 100%;
 }
 
 .subtitle {
@@ -86,7 +101,9 @@ h1 {
     text-transform: uppercase;
     line-height: 1.6;
     margin-bottom: 2rem;
-    min-height: 1.6em; /* Keeps card stable while deleting text */
+    min-height: 1.6em;
+    text-align: center;
+    width: 100%;
 }
 
 .dot-divider {
@@ -97,6 +114,7 @@ h1 {
 
 /* Terminal Console Widget Styling */
 .terminal-widget {
+    width: 100%;
     background: rgba(0, 0, 0, 0.75);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 14px;
@@ -129,7 +147,7 @@ h1 {
     transition: background-color 0.8s ease, box-shadow 0.8s ease;
 }
 
-/* Random desynchronized red/green blinking keyframes */
+/* LED blinking keyframes */
 .led-1 { animation: slowBlinkRedGreen1 8s ease-in-out infinite; }
 .led-2 { animation: slowBlinkRedGreen2 11s ease-in-out infinite; }
 .led-3 { animation: slowBlinkRedGreen3 13s ease-in-out infinite; }
@@ -146,121 +164,4 @@ h1 {
 
 @keyframes slowBlinkRedGreen3 {
     0%, 100% { background-color: #30d158; box-shadow: 0 0 3px #ffffff, 0 0 10px #30d158, 0 0 18px #30d158; }
-    40% { background-color: #ff453a; box-shadow: 0 0 3px #ffffff, 0 0 10px #ff453a, 0 0 18px #ff453a; }
-}
-
-.terminal-title {
-    color: var(--text-secondary);
-    font-size: 0.72rem;
-    letter-spacing: 0.03em;
-}
-
-.terminal-body {
-    color: #d1d5db;
-    line-height: 1.5;
-}
-
-.term-accent {
-    color: var(--accent-orange);
-    font-weight: 600;
-}
-
-.term-green {
-    color: var(--accent-green);
-}
-
-.cursor {
-    display: inline-block;
-    width: 7px;
-    height: 13px;
-    background: var(--accent-orange);
-    vertical-align: middle;
-    margin-left: 2px;
-    animation: cursorBlink 1s step-end infinite;
-}
-
-@keyframes cursorBlink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
-}
-
-.links-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
-}
-
-.btn {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 1rem 1.25rem;
-    min-height: 54px;
-    background: var(--btn-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: 16px;
-    color: var(--text-primary);
-    text-decoration: none;
-    font-size: 1rem;
-    font-weight: 500;
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    position: relative;
-    overflow: hidden;
-    touch-action: manipulation;
-}
-
-.btn:hover, .btn:focus-visible {
-    background: var(--glass-hover);
-    border-color: rgba(255, 255, 255, 0.3);
-    transform: translateY(-2px);
-    outline: none;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-}
-
-.btn:active {
-    transform: translateY(0);
-}
-
-.btn-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-    margin-right: 1rem;
-    flex-shrink: 0;
-}
-
-.btn-icon svg {
-    width: 20px;
-    height: 20px;
-    fill: currentColor;
-    transition: transform 0.25s ease;
-}
-
-.btn:hover .btn-icon svg {
-    transform: scale(1.1);
-}
-
-.btn-text {
-    flex-grow: 1;
-    text-align: left;
-}
-
-footer {
-    margin-top: 2.5rem;
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    text-align: center;
-}
-
-@media (max-width: 480px) {
-    .card {
-        padding: 2.25rem 1.5rem;
-        border-radius: 22px;
-    }
-    .subtitle {
-        font-size: 0.85rem;
-    }
-}
+    40% { background-color: #ff453a; box-shadow:
