@@ -98,25 +98,23 @@ h1 {
     font-weight: 500;
     color: var(--text-secondary);
     letter-spacing: 0.05em;
-    margin-right: -0.05em; /* Cancels out the trailing letter-spacing shift */
     text-transform: uppercase;
     line-height: 1.6;
-    margin-bottom: 2rem;
+    margin: 0 auto 2rem auto;
     min-height: 1.6em;
-    width: 100%;
     
-    /* Forces mathematical centering across all children */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.5rem; /* Clean, perfectly balanced spacing between words and dots */
+    /* Strict Block Centering */
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    padding: 0 !important;
 }
 
 .dot-divider {
     color: #ff3b30;
+    margin: 0 0.35rem;
     font-weight: bold;
-    display: inline-block;
+    display: inline;
 }
 
 /* Terminal Console Widget Styling */
