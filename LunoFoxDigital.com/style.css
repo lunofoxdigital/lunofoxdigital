@@ -93,28 +93,29 @@ h1 {
     width: 100%;
 }
 
-.subtitle {
+/* ==========================================
+   SUBTITLE FLEX BAR
+   ========================================== */
+.subtitle-bar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.6rem;               /* Perfect, equal spacing between every item */
+    width: 100%;
+    margin: 0 auto 2rem auto;
+    
     font-size: 0.95rem;
     font-weight: 500;
     color: var(--text-secondary);
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    line-height: 1.6;
-    margin: 0 auto 2rem auto;
-    min-height: 1.6em;
-    
-    /* Strict Block Centering */
-    display: block !important;
-    width: 100% !important;
-    text-align: center !important;
-    padding: 0 !important;
 }
 
-.dot-divider {
+/* Red Dot Styling */
+.subtitle-bar .dot {
     color: #ff3b30;
-    margin: 0 0.35rem;
     font-weight: bold;
-    display: inline;
+    line-height: 1;            /* Keeps dots vertically aligned with text */
 }
 
 /* Terminal Console Widget Styling */
