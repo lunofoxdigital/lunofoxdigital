@@ -1,0 +1,266 @@
+:root {
+    --bg-dark: #000000;
+    --text-primary: #f0f6fc;
+    --text-secondary: #8b949e;
+    --accent-orange: #ff6b35;
+    --accent-green: #30d158;
+    --accent-red: #ff3b30;
+    --glass-bg: rgba(18, 20, 26, 0.85);
+    --glass-border: rgba(255, 255, 255, 0.15);
+    --glass-hover: rgba(255, 255, 255, 0.15);
+    --btn-bg: rgba(255, 255, 255, 0.08);
+    --shadow: 0 20px 50px rgba(0, 0, 0, 0.9);
+    --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    --font-mono: "SF Mono", "Fira Code", "Cascadia Code", Consolas, "Courier New", monospace;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100vh;
+    font-family: var(--font-stack);
+    background-color: var(--bg-dark);
+    color: var(--text-primary);
+    overflow-x: hidden;
+}
+
+/* Pure pitch-black background on logo */
+.ambient-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+    background-color: #000000;
+}
+
+.page-wrapper {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 2rem 1.25rem;
+}
+
+.logo-badge {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem auto;
+    border-radius: 18px;
+    background: #000000;
+    border: 1px solid var(--glass-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+    padding: 2px;
+    overflow: hidden;
+    flex-shrink: 0;
+}
+
+h1 {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    font-weight: 700;
+    text-align: center;
+    letter-spacing: -0.02em;
+    color: var(--text-primary);
+    margin-bottom: 0.75rem;
+}
+
+.subtitle {
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    min-height: 1.6em; /* Keeps card stable while deleting text */
+}
+
+.dot-divider {
+    color: #ff3b30;
+    margin: 0 0.35rem;
+    font-weight: bold;
+}
+
+/* Terminal Console Widget Styling */
+.terminal-widget {
+    background: rgba(0, 0, 0, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 14px;
+    padding: 0.85rem 1rem;
+    margin-bottom: 2rem;
+    text-align: left;
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.8);
+}
+
+.terminal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 0.5rem;
+    margin-bottom: 0.65rem;
+}
+
+.status-lights {
+    display: flex;
+    gap: 6px;
+}
+
+.led {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    transition: background-color 0.8s ease, box-shadow 0.8s ease;
+}
+
+/* Random desynchronized red/green blinking keyframes */
+.led-1 { animation: slowBlinkRedGreen1 8s ease-in-out infinite; }
+.led-2 { animation: slowBlinkRedGreen2 11s ease-in-out infinite; }
+.led-3 { animation: slowBlinkRedGreen3 13s ease-in-out infinite; }
+
+@keyframes slowBlinkRedGreen1 {
+    0%, 100% { background-color: #30d158; box-shadow: 0 0 3px #ffffff, 0 0 10px #30d158, 0 0 18px #30d158; }
+    50% { background-color: #ff453a; box-shadow: 0 0 3px #ffffff, 0 0 10px #ff453a, 0 0 18px #ff453a; }
+}
+
+@keyframes slowBlinkRedGreen2 {
+    0%, 100% { background-color: #ff453a; box-shadow: 0 0 3px #ffffff, 0 0 10px #ff453a, 0 0 18px #ff453a; }
+    50% { background-color: #30d158; box-shadow: 0 0 3px #ffffff, 0 0 10px #30d158, 0 0 18px #30d158; }
+}
+
+@keyframes slowBlinkRedGreen3 {
+    0%, 100% { background-color: #30d158; box-shadow: 0 0 3px #ffffff, 0 0 10px #30d158, 0 0 18px #30d158; }
+    40% { background-color: #ff453a; box-shadow: 0 0 3px #ffffff, 0 0 10px #ff453a, 0 0 18px #ff453a; }
+}
+
+.terminal-title {
+    color: var(--text-secondary);
+    font-size: 0.72rem;
+    letter-spacing: 0.03em;
+}
+
+.terminal-body {
+    color: #d1d5db;
+    line-height: 1.5;
+}
+
+.term-accent {
+    color: var(--accent-orange);
+    font-weight: 600;
+}
+
+.term-green {
+    color: var(--accent-green);
+}
+
+.cursor {
+    display: inline-block;
+    width: 7px;
+    height: 13px;
+    background: var(--accent-orange);
+    vertical-align: middle;
+    margin-left: 2px;
+    animation: cursorBlink 1s step-end infinite;
+}
+
+@keyframes cursorBlink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
+.links-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem 1.25rem;
+    min-height: 54px;
+    background: var(--btn-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 16px;
+    color: var(--text-primary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    position: relative;
+    overflow: hidden;
+    touch-action: manipulation;
+}
+
+.btn:hover, .btn:focus-visible {
+    background: var(--glass-hover);
+    border-color: rgba(255, 255, 255, 0.3);
+    transform: translateY(-2px);
+    outline: none;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.btn-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+    transition: transform 0.25s ease;
+}
+
+.btn:hover .btn-icon svg {
+    transform: scale(1.1);
+}
+
+.btn-text {
+    flex-grow: 1;
+    text-align: left;
+}
+
+footer {
+    margin-top: 2.5rem;
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+@media (max-width: 480px) {
+    .card {
+        padding: 2.25rem 1.5rem;
+        border-radius: 22px;
+    }
+    .subtitle {
+        font-size: 0.85rem;
+    }
+}
