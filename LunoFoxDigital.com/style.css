@@ -94,28 +94,25 @@ h1 {
 }
 
 /* ==========================================
-   SUBTITLE FLEX BAR
+   CENTERED SUBTITLE
    ========================================== */
-.subtitle-bar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.6rem;               /* Perfect, equal spacing between every item */
+.subtitle {
     width: 100%;
-    margin: 0 auto 2rem auto;
-    
+    text-align: center;
     font-size: 0.95rem;
     font-weight: 500;
     color: var(--text-secondary);
     letter-spacing: 0.05em;
     text-transform: uppercase;
+    line-height: 1.6;
+    margin: 0 auto 2rem auto;
+    display: block;
 }
 
-/* Red Dot Styling */
-.subtitle-bar .dot {
+.dot-divider {
     color: #ff3b30;
+    margin: 0 0.35rem;
     font-weight: bold;
-    line-height: 1;            /* Keeps dots vertically aligned with text */
 }
 
 /* Terminal Console Widget Styling */
